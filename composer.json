@@ -1,0 +1,19 @@
+{
+    "name": "bit-academy/judge",
+    "description": "Bit Academy Trial Judge",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "BitAcademy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BitAcademy\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "^11"
+    }
+}

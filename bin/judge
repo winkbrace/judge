@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * The executable. Call like this:
+ *
+ * ./bin/judge "Command Line Beginner"
+ *
+ * Actually, the judge executable has to be added to the path, so we can call 'judge' from the trial directory.
+ */
+
+use BitAcademy\Judge;
+
+if (PHP_SAPI !== 'cli') {
+    exit;
+}
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$judge = new Judge();
+foreach ($judge->getTrials() as $trial) {
+    if (strtolower($trial->name()) === strtolower($argv[1])) {
+        $judge->rule($trial);
+        exit(0);
+    }
+}
+
+echo "Invalid trial name: '{$argv[1]}'\n";
+exit(1);
