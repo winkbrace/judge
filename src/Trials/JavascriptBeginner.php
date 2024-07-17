@@ -37,6 +37,9 @@ class JavascriptBeginner implements Trial
         ];
     }
 
+    /**
+     * Leave here the checks that are not yet automated.
+     */
     #[\Override]
     public function manualCheck(): string
     {
